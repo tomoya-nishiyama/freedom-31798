@@ -1,0 +1,17 @@
+<div class="origins-sell-contents">
+  <div class="contents row">
+    <div class="container">
+        <%= form_with(model: @origin, local: true) do |form| %>
+        <%= form.text_field :book_title, placeholder: "本のタイトル" %>
+        <%= form.text_field :youtube_url, placeholder: "Youtube URL" %>
+        <%= form.text_area :text, placeholder: "説明文", rows: "10" %>
+        <%= form.submit "変更する" %>
+      <% end %>
+    </div>
+  </div>
+  
+
+  <footer class="origins-sell-footer">
+    <%= link_to image_tag('logo (4).png' , size: '185x50'), "/" %>
+  </footer>
+</div>

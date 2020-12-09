@@ -1,0 +1,62 @@
+<%= render "shared/header" %>
+<div class='main'>
+
+  <%# 画面上部の「人生を変えるフリマアプリ」帯部分 %>
+  <div class='title-contents'>
+  
+    <h2 class='service-title'>
+      人生を変えるフリマアプリ
+    </h2>
+    <p class='service-explain'>
+      FURIMAはだれでもかんたんに出品・購入できる
+    </p>
+    <p class='service-explain'>
+      フリマアプリです
+    </p>
+  </div>
+
+  <%# 商品一覧 %>
+  <div class='origin-contents'>
+    <h2 class='title'>ピックアップカテゴリー</h2>
+    <%= link_to '新規投稿商品', "#", class: "subtitle" %>
+    <ul class='origin-lists'>
+      <% @origins.each do |origin| %>
+        <li class='list'>  
+         
+         <div class='origin-img'> 
+           <iframe  height="200" src="https://www.youtube.com/embed/<%=origin.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+         </div>
+
+
+
+          <%= link_to origin_path(origin.id) do %> 
+          <div class='origin-info'>
+            <h3 class='origin-name'>
+              <%= origin.book_title %>
+            </h3>
+
+            <div class='item-price'>
+                <span><%= origin.text %><br><%= origin.category.name %></span>
+              <div class='star-btn'>
+                <h3>いいね件数: <%= origin.liked_users.count %></h3>
+                
+                <%= image_tag "star.png", class:"star-icon" %>
+                <span class='star-count'><%= origin.liked_users.count %></span>
+              </div>
+            </div>
+          </div>
+          <% end %> 
+        </li> 
+      <% end %>
+
+    </ul>
+  </div>
+  <%# 商品一覧 %>
+  <%= link_to(new_origin_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>投稿する</span>
+  <%= image_tag 'logo (5).png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
+
+</div>
+
+<%= render "shared/footer" %>
