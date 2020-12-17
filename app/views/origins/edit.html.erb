@@ -3,7 +3,9 @@
     <div class="container">
         <%= form_with(model: @origin, local: true) do |form| %>
         <%= form.text_field :book_title, placeholder: "本のタイトル" %>
+        <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"category-select"}) %>
         <%= form.text_field :youtube_url, placeholder: "Youtube URL" %>
+        <%= form.text_field :amazon, placeholder: "Amazon URL" %>
         <%= form.text_area :text, placeholder: "説明文", rows: "10" %>
         <%= form.submit "変更する" %>
       <% end %>

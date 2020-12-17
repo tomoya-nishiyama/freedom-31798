@@ -1,5 +1,6 @@
 class OriginsController < ApplicationController
   before_action :set_origin, only: [:edit, :show, :update, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @origins = Origin.all
@@ -22,18 +23,10 @@ class OriginsController < ApplicationController
       render :new
     end
 
-    if @origin.save
-      redirect_back(fallback_location: root_path)
-    else
-      redirect_back(fallback_location: root_path)
-    end
   end
 
   def show
-    @origin = Origin.find(params[:id])
-    
     @like = Like.new
-    # @user = User.find(@origin.user_id)
   end
 
   def edit
@@ -72,6 +65,13 @@ class OriginsController < ApplicationController
 
   def set_origin
     @origin = Origin.find(params[:id])
+  end
+
+  def move_to_index
+    @origin = Origin.find(params[:id])
+    unless user_signed_in? && current_user.id == @origin.user_id
+      redirect_to action: :index
+    end
   end
 
 end

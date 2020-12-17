@@ -1,7 +1,8 @@
-    
-    <h3>いいね件数: <%= @origin.likes.count %></h3>
-      <% if current_user.liked_by?(@origin) %>
-        <%= button_to 'いいねを取り消す', origin_like_path(@origin.id), method: :delete, remote: true %>
+  <div class='heart-box'>
+    <%= image_tag "logo (7).png", class:"heart-icon" %><span class='star-count'><%= @origin.liked_users.count %></span>
+      <% if current_user.liked_by?(origin) %>
+        <%= link_to origin.likes.count, origin_like_path(@origin.id), method: :delete, remote: true %>
       <% else %>
-        <%= button_to 'いいね', origin_likes_path(@origin.id), method: :post, remote: true %>
+        <%= link_to origin.likes.count, origin_likes_path(@origin.id), method: :post, remote: true %>
       <% end %>
+  </div>

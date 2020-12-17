@@ -1,13 +1,17 @@
 * {
   box-sizing: border-box;
+  
 }
 
 .top-page-header {
-  width: 100vw;
+  background-image: url("../木目画55.png");
+  background-size: cover;
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
+  background
 }
+
 
 .search-bar-contents {
   display: flex;
@@ -15,33 +19,49 @@
   align-items: center;
 }
 
-.furima-icon {
+.origin-icon {
   width: 10vw;
   margin-right: 10vw;
 }
 
 .search-form {
-  width: 65vw;
-  height: 5vh;
+  width: 55vw;
+  height: 25px; 
   display: flex;
-  margin-bottom: 5px;
 }
 
 .search-form>.input-box {
-  width: 100%;
-  height: 5vh;
+  
   padding-left: 10px;
 }
 
-.search-button {
-  width: 5vh;
+.genre-select{
+  font-size: 12px;
+  width: 30%;
+  height: 32px;
+  margin-top: 5px;
+  padding-left: 10px;
+  margin-bottom: 5px;
+  
+}
+
+.search-btn {
+  width: 65px;
+  height: 33px;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
-  padding: 8px;
+  background-color: #c7d31e;
+  padding-top: 5px;
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+  color: #2b2b2b8f;
+  font-size: 15px;
+  /* font-family: monospace; */
 }
 
 .search-icon {
+  text-shadow:1px 0 5px black;
   width: 100%;
 }
 

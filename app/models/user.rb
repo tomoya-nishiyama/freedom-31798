@@ -4,9 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_many :origin, dependent: :destroy
+  has_many :origin, dependent: :destroy, foreign_key: :user_id
   has_many :likes, dependent: :destroy
-  has_many :liked_origins, through: :likes, source: :origin
+  # has_many :liked_origins, through: :likes, source: :origin
   def liked_by?(origin)
     self.likes.exists?(origin_id: origin.id)
   end

@@ -1,7 +1,8 @@
 /* 商品の概要 */
 
 .origin-show {
-  background-color: #f8f8f8;
+  background-image: url("../木目画55.png");
+  
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -10,10 +11,11 @@
 }
 
 .origin-box {
-  background-color: #FFF;
+  background-image: url("../木目画55.png"); 
+  /* background-color: #f8f8f8;  */
   width: 70vw;
-  min-width: 1200px;
-  padding: 10vh 15vw;
+  min-width: 1000px;
+  padding: 3vh 15vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,14 +34,15 @@
 
 }
 
+
 .origin-red-btn {
   text-align: center;
-  background-color: #ea352d;
+  background-color: #c7d31e;
   font-size: 24px;
   font-weight: bold;
   color: #FFF;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 2vh 7vw;
 }
 
 .or-text {
@@ -52,7 +55,7 @@
   font-size: 24px;
   color: black;
   margin: 20px 0px;
-  padding: 2vh 10vw;
+  padding: 2vh 7vw;
 }
 
 .amazon-btn { 
@@ -66,12 +69,12 @@
 
 .detail-table {
   margin-bottom: 30px;
-  width: 100%;
+  width: 70%;
 }
 
 .detail-item {
   width: 20%;
-  background-color: #eee;
+  background-color: #c7d31e;
   border: 1px solid #dedede;
   font-size: 14px;
   text-align: center;
@@ -82,6 +85,7 @@
   padding: 20px;
   border: 1px solid #dedede;
   font-size: 14px;
+  background-color: #ffffff;
 }
 
 .option {
@@ -148,4 +152,10 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 23px;
+}
+
+
+
+#likes_buttons_{
+  font-size: 2vh;
 }

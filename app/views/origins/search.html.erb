@@ -1,14 +1,20 @@
-<%= form_with(url: search_origins_path, method: :get, local: true, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "キーワードで検索する", class: "search-input" %>
-  <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-<% @origins.each do |origin| %>
-    <li class='list'> 
-
+<%# <%= form_with(url: search_origins_path, method: :get, local: true, class: "search-form") do |form| %>
+  <%# <%= form.text_field :keyword, placeholder: "キーワードで検索する", class: "search-input" %> 
+  <%# <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class:"genre-select"}) %> 
+  <%# <%= form.submit "検索", class: "search-btn" %> 
+<%# <% end %> 
+<%= render "shared/header" %>
+  <div class='origin-contents'>
+    <ul class='origin-lists'>
+      <% @origins.each do |origin| %>
+        <li class='list'>  
+         
          <div class='origin-img'> 
            <iframe  height="200" src="https://www.youtube.com/embed/<%=origin.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
          </div>
+
+
+
           <%= link_to origin_path(origin.id) do %> 
           <div class='origin-info'>
             <h3 class='origin-name'>
@@ -18,11 +24,16 @@
             <div class='item-price'>
                 <span><%= origin.text %><br><%= origin.category.name %></span>
               <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
+                <%= image_tag "logo (7).png", class:"heart-icon" %><span class='star-count'><%= origin.liked_users.count %></span>
+                
+                
+                
               </div>
             </div>
           </div>
           <% end %> 
-    </li> 
-<% end %>
+        </li> 
+      <% end %>
+
+    </ul>
+  </div>

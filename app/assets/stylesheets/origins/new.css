@@ -2,7 +2,8 @@
 
 
 .origins-sell-contents {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
+  background-image: url("../白木.jpg");
   font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
   font-size: 14px;
   display: flex;

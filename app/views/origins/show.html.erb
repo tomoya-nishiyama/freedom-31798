@@ -10,15 +10,17 @@
     <div class='youtube-url'>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=@origin.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
-
-       <div id="likes_buttons_<%= @origin.id %>">
+        
+        <div id="likes_buttons_<%= @origin.id %>">
              <%= render partial: 'likes/like', locals: { origin: @origin} %>
        </div> 
 
   <% if user_signed_in? %>
+    <% if current_user.id == @origin.user_id %>
     <%= link_to '編集', edit_origin_path(@origin.id), method: :get, class: "origin-red-btn" %>
-    <p class='or-text'>or</p>
+    
     <%= link_to '削除', origin_path(@origin.id), method: :delete, class:'origin-destroy' %>
+    <% end %>
   <% end %>
     <%= link_to image_tag('amazon.rogo.png'), @origin.amazon, class:"amazon-btn" %>
     
@@ -34,20 +36,10 @@
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= "カテゴリー名" %></td>
+          <td class="detail-value"><%= @origin.category.name %></td>
         </tr>
       </tbody>
     </table>
-    <div class="option">
-      <div class="favorite-btn">
-        <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
-      </div>
-      <div class="report-btn">
-        <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
-        <span>不適切な商品の通報</span>
-      </div>
-    </div>
   </div>
 </div>
 

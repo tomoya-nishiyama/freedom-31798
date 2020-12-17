@@ -6,14 +6,15 @@ a {
   background: #f8f8f8;
 }
 
-/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+/* 画面上部の「メインの部分」帯部分 */
 .title-contents {
   width: 100vw;
-  height: 340px;
-  // background-image: video_tag('12752781840729.mp4');
+  height: 520px;
+  background-image: url('../読書3.png');
+  background-position: 0px 0px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  // background-position: top center;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -33,30 +34,35 @@ a {
 }
 
 
-/* //画面上部の「人生を変えるフリマアプリ」帯部分 */
+/* //画面上部の「メインの部分」帯部分 */
 
 
 /* 商品一覧 */
 
 .origin-contents {
-  background-color: #FFF;
+  background-image: url("../木目画55.png");
+  
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 7vh 0;
+  
 }
 
 .origin-contents>.title {
   font-size: 5vh;
   line-height: 1.4;
   font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 .origin-contents>.subtitle {
   font-size: 3vh;
   margin: 1vh 0;
   text-decoration: none;
-  color: #3ccace;
+  color: #c7d31e;
   font-weight: bold;
 }
 
@@ -72,7 +78,8 @@ a {
   width: 37vh;
   padding: 1vw;
   margin: o auto;
-  background-color: #FFF;
+  background-image: url("../木目画55.png");
+  // background-color: #FFF;
 }
 
 
@@ -82,16 +89,17 @@ a {
 
 .origin-img {
   width: 33vh;
-  height: 33vh;
+  height: 28vh;
 }
 
 
 
 
 .origin-info {
-  background-color: #FFF;
+  background-image: url("../木目画55.png");
   color: black;
-  padding: 1vw;
+  padding: 1.1vw;
+  margin: auto;
 }
 
 .origin-name {
@@ -99,7 +107,7 @@ a {
 }
 
 .item-price {
-  font-size: 1.5vh;
+  font-size: 1.7vh;
   display: flex;
   justify-content: space-between;
 }
@@ -110,14 +118,14 @@ a {
   align-items: center;
 }
 
-.star-icon {
-  height: 2vh;
-  width: 2vh;
+.heart-icon {
+  height: 3vh;
+  width: 3vh;
   margin-right: 0.5vw;
 }
 
 .star-count {
-  font-size: 2vh;
+  font-size: 3vh;
 }
 
 /* //商品一覧 */
